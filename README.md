@@ -73,22 +73,22 @@ Column Description:
 I trained 3 models: XGBoost, LightGBM vs Catboost.
 I use Optuna for hyperparameter tuning, please refer to [Optuna_Hyperparameter_tuning](https://github.com/Khangtran94/Diabetes-Prediction/blob/main/Notebooks/3_Optuna_Hyperparameter_tuning.ipynb).
 
-
-1. Confusion Matrix
+* Confusion Matrix
 ![alt text](Images/Confusion_Matrix.png)
 
-1. Classification Report
+* Classification Report
 
 ![alt text](Images/Classfication_Report.png)
 
-1. ROC Curve
+* ROC Curve
 
 ![alt text](Images/ROC_Curve.png)
 
-1. Feature Importance:
+* Feature Importance:
 ![alt text](Images/Feature_Importance.png)
 
-1. Cross-validation
+* Cross-validation
+
 ![alt text](Images/Cross_Validation.png)
 
 => Select CATBOOST model as final model
