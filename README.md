@@ -71,7 +71,8 @@ Column Description:
 
 ## Model Training vs Compare performance
 I trained 3 models: XGBoost, LightGBM vs Catboost.
-I use Optuna for hyperparameter tuning, please refer to Notebook 3_Optuna_Hyperparameter_tuning.ipynb
+I use Optuna for hyperparameter tuning, please refer to [Optuna_Hyperparameter_tuning](https://github.com/Khangtran94/Diabetes-Prediction/blob/main/Notebooks/3_Optuna_Hyperparameter_tuning.ipynb).
+
 
 1. Confusion Matrix
 ![alt text](Images/Confusion_Matrix.png)
