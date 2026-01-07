@@ -26,6 +26,57 @@
 └── testcase_API.txt 
 ```
 
+## Business Perspective:
+Early detection of diabetes is critical for preventive healthcare. By predicting the probability that a patient will be diagnosed with diabetes, healthcare providers can:
+
+* Identify high-risk patients early.
+* Provide targeted lifestyle and medical interventions.
+* Reduce long-term healthcare costs associated with untreated diabetes.
+
+The goal is to turn patient health data into actionable insights, enabling data-driven decisions in clinical settings.
+
+## Data Science Perspective:
+
+From a data science standpoint, the challenge involves:
+* Analyzing patient data (age, BMI, cholesterol, physical activity, family history, etc.).
+* Feature engineering to improve model predictions.
+* Modeling the probability of diabetes using supervised machine learning.
+
+The key goal is to build accurate, interpretable predictive models that can generalize to new patients.
+
+## Target Goal:
+
+Predict the probability that a patient will be diagnosed with diabetes using the available dataset.
+
+Predictions are probabilities (values between 0 and 1) rather than just a binary classification.
+
+This allows healthcare providers to assess risk levels, not just yes/no outcomes.
+
+## Machine Learning Models:
+
+ML models help us:
+
+* Identify complex patterns in patient health data.
+* Make personalized predictions for each patient.
+* Support clinical decision-making with probabilistic risk scores.
+* Compare different algorithms to select the best performing model.
+
+## Evaluation Criteria:
+
+Submissions are evaluated using Area Under the ROC Curve (AUC-ROC):
+
+* ROC Curve: Plots the true positive rate (sensitivity) vs the false positive rate (1 - specificity) for different probability thresholds.
+
+* AUC (Area Under the Curve): Measures how well the model distinguishes between patients with and without diabetes.
+
+Why AUC-ROC?
+
+* It evaluates the quality of probability predictions, not just binary accuracy.
+
+* A higher AUC indicates the model correctly ranks high-risk patients above low-risk patients.
+
+* This is especially useful in healthcare where false positives and false negatives have different consequences.
+
 ## Dataset Overview:
 The data comes from the [Playground Series S5E12 Kaggle competition.](https://www.kaggle.com/competitions/playground-series-s5e12)
 ![alt text](Images/Background.png)
@@ -38,7 +89,10 @@ Column Description:
 
 ![alt text](Images/Column_Description.png)
 
-## EDA highlights
+## EDA highlights:
+More detail you can visit the 
+[EDA Notebook](https://github.com/Khangtran94/Diabetes-Prediction/blob/main/Notebooks/2_EDA_Notebook.ipynb).
+
 1. Mutual Information:
 ![alt text](Images/Mutual_Information.png)
 
@@ -70,6 +124,8 @@ Column Description:
 ![alt text](Images/Weight_vs_History.png)
 
 ## Model Training vs Compare performance
+![alt text](Images/Target_Distribution.png)
+
 I trained 3 models: XGBoost, LightGBM vs Catboost.
 I use Optuna for hyperparameter tuning, please refer to [Optuna_Hyperparameter_tuning](https://github.com/Khangtran94/Diabetes-Prediction/blob/main/Notebooks/3_Optuna_Hyperparameter_tuning.ipynb).
 
