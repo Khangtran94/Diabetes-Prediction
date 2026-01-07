@@ -33,14 +33,14 @@ def prepare_input(json_input, feature_columns, categorical_cols, fill_numeric=0)
 
 ### Example
 json_input = {
-    "gender": "Female",
-    "family_history_diabetes": "0",
-    "physical_activity_minutes_per_week" : "10",
-    "age": "65",
-    "bmi": "30",
-    "triglycerides":"130",
-    "cholesterol_total":"150",
-    "hdl_cholesterol":"50",}
+    "gender": "Male",
+    "family_history_diabetes": "1",
+    "physical_activity_minutes_per_week" : "80",
+    "age": "35",
+    "bmi": "25",
+    "triglycerides":"100",
+    "cholesterol_total":"170",
+    "hdl_cholesterol":"80",}
 
 input_df = prepare_input(json_input, feature_columns, categorical_cols)
 y_pred_prob = loaded_model.predict_proba(input_df)[:, 1]
