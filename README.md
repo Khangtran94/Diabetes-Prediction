@@ -1,5 +1,22 @@
 # Diabetes-Prediction
 
+<img width="764" height="379" alt="Screenshot 2026-01-07 at 22 03 41" src="https://github.com/user-attachments/assets/2686b8e1-0219-47cc-83ff-3512759f7b38" />
+
+Predicting Diabetes Probability with Machine Learning
+
+This project builds a machine learning model to predict the probability (0-1) that a patient will be diagnosed with diabetes based on health data. It uses supervised learning techniques, compares multiple models (XGBoost, LightGBM, CatBoost), and deploys the best model (CatBoost) via FastAPI web services and Docker for easy use in healthcare scenarios.
+
+The project originated from the Kaggle Playground Series - S5E12 competition dataset, which includes features like age, BMI, cholesterol, physical activity, family history, and more.
+
+## Key Features
+
+Exploratory Data Analysis (EDA) with visualizations (correlation heatmaps, feature importance, distributions)
+Hyperparameter tuning using Optuna
+Model comparison and selection based on AUC-ROC
+FastAPI-based web service for single and batch predictions
+Docker support for containerized deployment
+Probabilistic predictions for risk assessment
+
 ## Project Structure
 
 ```text
@@ -153,6 +170,74 @@ I use Optuna for hyperparameter tuning, please refer to [Optuna_Hyperparameter_t
 1. Save final model as catboost_model.pkl
 1. Create requirements.txt 
 1. Create Dockerfile
+
+## Usage
+
+### Prerequisites
+* Python 3.8 or higher
+* Git installed for cloning the repository
+* Docker (optional, for containerization)
+
+---
+
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/Khangtran94/Diabetes-Prediction.git
+cd Diabetes-Prediction
+```
+
+### Step 2: Install Dependencies
+
+Install the required Python packages using the provided `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3: Explore and Prepare Data
+
+The dataset is located in the `Data/` directory (`train.csv` for training and `test.csv` for testing).
+
+Use the Jupyter notebooks in the `Notebooks/` directory:
+
+#### Import and Check Data
+Run `Notebooks/1_Import_vs_Check_Data.ipynb` to load the data, inspect its structure, check for missing values, and perform initial cleaning.
+
+#### Exploratory Data Analysis (EDA)
+Run `Notebooks/2_EDA_Notebook.ipynb` to analyze patterns, correlations (e.g., heatmap), and visualizations such as Age vs Diabetes, BMI distribution, and feature importance via mutual information.
+
+#### Hyperparameter Tuning
+Run `Notebooks/3_Optuna_Hyperparameter_tuning.ipynb` to optimize hyperparameters for models like XGBoost, LightGBM, and CatBoost using Optuna.
+
+---
+
+### Step 4: Train Models
+
+Navigate to the `Train_models/` directory and run the training notebook:
+
+```bash
+cd Train_models
+jupyter notebook Training_Models.ipynb
+```
+This notebook trains and compares XGBoost, LightGBM, and CatBoost models, evaluates them using AUC-ROC, confusion matrix, classification report, ROC curve, feature importance, and cross-validation. The best model (CatBoost) is saved as catboost_model.pkl.
+
+### Step 5: Make Predictions
+You can use the trained model for predictions in several ways:
+
+#### Option 1: Single or Batch Predictions via FastAPI Web Service
+- For **single predictions**: Run `Web_Service.py`: ```termianl uvicorn Web_Service:app --reload```
+This starts a FastAPI server. Access the interactive UI at `http://localhost:8000/docs` to input patient data and get diabetes probability predictions.
+
+- For **batch predictions**: Run `Web_Service_batch.py`: ```termianl uvicorn Web_Service_batch:app --reload```
+Use the API endpoint to submit multiple patient records (e.g., via JSON payload) for bulk predictions.
+
+Sample test cases are provided in `testcase_API.txt` for validating the API.
+
+#### Option 2: Terminal-Based Predictions
+Edit the input JSON in `Load_final_model_cat.py` with patient data, then run: ```python Load_final_model_cat.py```
 
 ## FastAPI Web Services
 * Option 1: via FastAPI UI.
