@@ -1,0 +1,43 @@
+{
+  "gender": "Female",
+  "family_history_diabetes": 1,
+  "physical_activity_minutes_per_week": 10,
+  "age": 65,
+  "bmi": 30,
+  "triglycerides": 130,
+  "cholesterol_total": 150,
+  "hdl_cholesterol": 50
+}
+
+[
+  {
+    "gender": "Female",
+    "family_history_diabetes": 1,
+    "physical_activity_minutes_per_week": 10,
+    "age": 65,
+    "bmi": 30,
+    "triglycerides": 130,
+    "cholesterol_total": 150,
+    "hdl_cholesterol": 50
+  },
+  {
+    "gender": "Male",
+    "family_history_diabetes": 0,
+    "physical_activity_minutes_per_week": 20,
+    "age": 50,
+    "bmi": 28,
+    "triglycerides": 150,
+    "cholesterol_total": 180,
+    "hdl_cholesterol": 40
+  },
+  {
+    "gender": "Female",
+    "family_history_diabetes": 1,
+    "physical_activity_minutes_per_week": 5,
+    "age": 72,
+    "bmi": 32,
+    "triglycerides": 200,
+    "cholesterol_total": 190,
+    "hdl_cholesterol": 45
+  }
+]

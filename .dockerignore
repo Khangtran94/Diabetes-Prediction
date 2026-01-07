@@ -1,0 +1,6 @@
+__pycache__
+*.ipynb
+Data/*
+Notebooks/*
+*.pyc
+*.pkl   # optional if you mount the model instead
