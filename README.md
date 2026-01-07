@@ -35,6 +35,7 @@ Overview of the dataset.
 ![alt text](Images/Overview.png)
 
 Column Description:
+
 ![alt text](Images/Column_Description.png)
 
 ## EDA highlights
@@ -76,9 +77,11 @@ I use Optuna for hyperparameter tuning, please refer to Notebook 3_Optuna_Hyperp
 ![alt text](Images/Confusion_Matrix.png)
 
 1. Classification Report
+
 ![alt text](Images/Classfication_Report.png)
 
 1. ROC Curve
+
 ![alt text](Images/ROC_Curve.png)
 
 1. Feature Importance:
@@ -106,9 +109,11 @@ I use Optuna for hyperparameter tuning, please refer to Notebook 3_Optuna_Hyperp
 * Option 2: Edit the JSON file in Load_final_model_cat.py then run via Terminal
 
 Example 1
+
 ![alt text](Images/CLI_Example_1.png)
 
 Example 2
+
 ![alt text](Images/CLI_Example_2.png)
 
 ## Build Docker Images
